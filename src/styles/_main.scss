@@ -1,0 +1,93 @@
+.main{
+    @include dflex(row, unset, unset, 10rem);
+    padding: 0 3rem;
+    .main-left{
+        width: 35%;
+        .main-left-item{
+            .title{
+                @include title(2.5rem, 400, $DarkBlue);
+            }
+        }
+    }
+    .main-right{
+        width: 50%;
+        @include dflex(column, unset, unset, 2rem);
+        .button{
+            button{
+                @include button(7px 15px, 15px,$BrightRed,$VeryPaleRed);
+                height: 100%;
+            }
+        }
+        .main-right-item{
+            @include dflex(column, unset, unset, 2rem);
+            .mainRightItemTop{
+                @include dflex(row, space-between, center, unset);
+                .title{
+                    @include title(1.5rem, 400, $DarkBlue);
+                    
+                }
+            }
+        }
+
+    }
+
+
+    @media screen and (min-width:375px)  {
+        @include dflex(column, unset, unset, 10rem);
+        .main-left{
+            width:100%;            
+        }
+        .main-right{
+            width: 100%;
+            
+            .main-right-item{
+                .mainRightItemTop{
+                    @include dflex(row, unset, center, 2rem);
+                    background-color: lighten($BrightRed, 35%);
+                    position: relative;
+                    &:after{
+                        content: '';
+                        position: absolute;
+                        background-color: lighten($BrightRed, 35%);
+                        width: 100%;                    
+                        height: 100%;
+                        left: 100%;
+                    }
+                    .title{  
+                        @include dflex(row, unset, center, unset)          ;
+                    }
+                }
+            }
+            .button{                        
+                z-index: 2;                           
+            }
+        }
+    }
+
+    @media screen and (min-width:768px) {
+        @include dflex(row, unset, unset, 10rem);
+        .main-left{
+            width:35%;                        
+        }
+        .main-right{
+            width: 50%;
+            .main-right-item{
+                @include dflex(column, unset, unset, 2rem);
+                .mainRightItemTop{
+                    background-color: inherit;
+                    position: static;
+                    &:after{
+                        display: none;
+                    }
+                    .title{
+                        @include title(1.3rem, 400, $DarkBlue);
+                        background-color: inherit;                
+                    }
+                }
+                .description{
+                    margin-left: 5.5rem;
+                }
+            }
+        }       
+    }
+}

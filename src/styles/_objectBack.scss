@@ -1,0 +1,24 @@
+.object-back{
+    @include objectBack(80%, 29rem, 29rem,lighten($BrightRed, 35%), -45deg);
+    position: absolute;
+    top: -1rem;
+   // right: -18rem;
+
+    @media screen and (min-width:375px)  {
+        @include objectBack(162%, clamp(70vw,75vw,80vw), 18rem,lighten($BrightRed, 35%), -45deg);
+    }
+    @media screen and (min-width:576px)  {
+        @include objectBack(150%, clamp(70vw,75vw,80vw), 18rem,lighten($BrightRed, 35%), -45deg);
+    }
+    @media screen and (min-width:768px)  {
+        @include objectBack(90%, clamp(70vw,490px,80vw), 29rem,lighten($BrightRed, 35%), -45deg);
+        top: -3rem;
+        right: -21rem;
+    }
+    @media screen and (min-width:992px)  {
+        @include objectBack(90%, clamp(46vw,490px,80vw), 29rem,lighten($BrightRed, 35%), -45deg);
+        top: -9rem;
+        right: -25rem;
+
+    }
+}

@@ -1,0 +1,8 @@
+.button{
+    grid-area: btn;
+    button{
+        @include button(10px 35px,30px,$BrightRed,$VeryPaleRed);
+        //box-shadow: 3px 4px 5px lighten($BrightRed,35%);
+    }
+    
+}

@@ -1,0 +1,21 @@
+@import './title';
+@import './description';
+
+.article{
+    width: 35%;
+    @include dflex(column, unset, unset, 2.5rem);
+
+    @media screen and (min-width:375px) {
+        .title{
+            text-align: center;
+        }
+        width: 100%;
+        @include dflex(column, center, center, 2.5rem);
+
+    }
+
+    @media screen and (min-width:768px) {       
+        width: 35%;
+
+    }
+}

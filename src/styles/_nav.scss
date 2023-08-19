@@ -1,0 +1,87 @@
+.nav{
+    grid-area: nav;
+    position: relative;
+    
+    .nav-links-desktop{
+        @include dflex(row,center, center,2rem);
+
+        a{
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: $VeryDarkBlue;
+            &:hover{
+                opacity: 0.8;
+                color: $DarkGrayishBlue;
+            }
+        }
+    }
+    img{
+        display: none;
+        cursor: pointer;
+    }
+
+
+    @media screen and (min-width:375px)  {
+        .nav-links{
+            position: absolute;
+            top: 2rem;
+            right: 0;
+            width: 264px;
+            height: auto;
+            background-color: $BrightRed;
+            @include dflex(column, unset, unset, 1rem);
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            a{
+                color: white;
+            }
+            img{
+                width: 1rem;
+                height: 1rem;
+                position: absolute;
+                right: 1rem;
+                z-index: 10;
+                 cursor: pointer;
+                &:hover{
+                    opacity: 0.5;
+                    transform: scale(1.2);
+                }
+            }
+        }
+        img{
+            display: flex;
+        }        
+        .nav-links-desktop{
+            display: none;
+        }
+    }
+
+    @media screen and (min-width:768px)  {
+        .nav-links{
+            display: none;
+        }
+        img{
+            display: none;
+        }        
+        .nav-links-desktop{
+            display: flex;
+            gap: 1rem;
+            a{
+                font-size: 1rem;
+             
+            }
+        }
+    }
+
+    @media screen and (min-width:992px)  {
+        
+        .nav-links-desktop{
+        
+            gap: 2rem;
+            a{
+                font-size: 1.2rem;
+             
+            }
+        }
+    }
+}

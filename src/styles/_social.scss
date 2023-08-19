@@ -1,0 +1,35 @@
+.social{
+    @include dflex(row, center, center, 1rem);
+    .social-item{
+        width: 1.2rem;
+        height: 1.2rem;
+        svg{
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            transition: path 0.4s ease;
+            &:hover path{
+                fill: $BrightRed;
+        }
+    }
+    }
+
+
+    @media screen and (min-width:375px) {
+        @include dflex(row, unset, center, 2rem);
+        .social-item{
+            height: 3rem;
+            width: 3rem;
+            svg{
+                width: 100%;
+            }                    
+        }
+    }
+    @media screen and (min-width:992px) {
+        .social-item{
+            height: 1.5rem;
+            width: 1.5rem;
+                                
+        }
+    }
+}

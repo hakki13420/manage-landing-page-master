@@ -1,0 +1,109 @@
+footer{
+    .footer-top{
+        padding: 3rem 8rem;
+        @include dflex(row, space-between, center, unset);
+        background-color:$BrightRed;
+        position: relative;
+        overflow: hidden;
+        z-index: 2;
+        .title{
+            @include title(2rem, 700, $VaryLightGray);
+            width: 40%;
+        }
+        .button{
+            button{                
+                @include button(7px 15px, 15px,$VeryPaleRed,$BrightRed);
+            }
+        }
+        .object-back{
+            @include objectBack(58%, 14rem, 14rem,#f17e5d, -45deg);
+            position: absolute;
+            top: 4rem;
+            left: 1rem;
+            opacity: 0.5;
+            &:last-child{
+                @include objectBack(28%, 14rem, 14rem,#f17e5d, -45deg);
+                position: absolute;
+                top: -8rem;
+                left: calc(100vw - 14rem);
+                opacity: 0.5;
+            }
+        }
+
+        @media screen and (min-width:375px) {
+            @include dflex(column, center, center, 2rem);
+            padding: 3rem 2rem;
+            .title{
+                width: 80%
+            }
+            .object-back{
+                @include objectBack(54%, 14rem, 14rem,#f17e5d, -45deg);
+
+                top: 4rem;
+                left:-10rem;
+                &:last-child{
+                    display: none;
+                }
+            }
+        }
+
+        @media screen and (min-width:576px) {
+            @include dflex(row, space-between, center, 2rem);
+            .object-back{
+                @include objectBack(83%, 14rem, 14rem,#f17e5d, -45deg);                
+                top: 11rem;
+                left: -8rem;
+                
+            }
+        }
+        @media screen and (min-width:768px) {
+            .object-back{
+                &:last-child{
+                    display: block;
+                }
+            }
+        }        
+      
+    }
+    .footer-bottom{
+        padding: 2rem;
+        background-color: $VeryDarkBlue;
+        @include dflex(row, space-between, unset, 1rem);
+        .logo{
+            svg{
+                path{
+                    fill:white;
+                }
+                g{
+                    fill:red;
+                    path{
+                        fill: #F3603C;
+                    }
+                }
+            }
+        }
+        .footer-bottom-item{
+            @include dflex(column, center, unset, 2rem);
+        }
+
+        @media screen and (min-width:375px)  {
+            position: relative;
+            @include dflex(column-reverse, space-between, unset, 1rem);
+            .footer-bottom-item{
+                @include dflex(column-reverse, center, center, 2rem);
+                margin-bottom: 2rem;
+                
+            }
+        }
+        
+        @media screen and (min-width:992px)  {
+            position: static;
+            @include dflex(row, space-between, unset, 1rem);
+            .footer-bottom-item{
+                @include dflex(column, center, center, 2rem);
+                margin-bottom: 2rem;
+                
+            }
+        }
+    }
+}

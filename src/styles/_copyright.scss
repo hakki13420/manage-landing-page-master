@@ -1,0 +1,9 @@
+.copy-right{
+    margin-top: 1rem;
+    color: $DarkGrayishBlue;
+
+    @media screen and (min-width:375px)  {
+        position: absolute;
+        bottom: 10px;
+    }
+}

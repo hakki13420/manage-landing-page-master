@@ -1,0 +1,23 @@
+@import './article';
+
+.header{
+    padding: 1rem 3rem;
+    margin: 5rem 0;
+    @include dflex(row, unset, center,7rem);
+    .statComponent{
+        img{
+            width: 100%;
+        }
+    }
+
+    @media screen and (min-width:375px)  {
+        @include dflex(column-reverse, center, center, unset);
+    }
+    @media screen and (min-width:768px)  {
+        @include dflex(row, unset, center, 7rem);
+        .statComponent{
+            width: 50%;
+        }
+        
+    }
+}

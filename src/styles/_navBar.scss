@@ -1,0 +1,28 @@
+@import './button';
+@import './logo';
+@import './nav';
+
+
+.nav-bar{
+  padding: 1rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(10,  1fr);
+  grid-template-areas: 'logo logo nav nav nav nav nav nav btn btn';
+  justify-items: center;
+  align-items: center;
+
+
+  @media screen and (min-width:375px)  {
+    @include dflex(row, space-between, center, unset);
+    .button{
+      display: none;
+    }        
+  }
+
+  @media screen and (min-width:768px)  {
+    @include dflex(row, space-between, center, unset);
+    .button{
+      display: block;
+    }        
+  }
+}

@@ -1,0 +1,82 @@
+
+.testimonials{
+    margin: 3rem 0;
+    padding: 3rem 0;
+    width: 100%;
+    position:relative;
+    @include dflex(column, center, center, 4rem);
+    
+    .title{
+        @include title(2rem, 700, $DarkBlue);
+    }
+    .slider-container{
+        @include dflex(row, unset, center, 2rem );
+        width: 100%;
+        transition: transform .3s;
+        .slider{ 
+            @include dflex(row, unset, unset, 2rem );
+            min-width: 100%;
+            .slide{
+                width: 33%;                
+                position: relative;
+                .avatar{
+                    position: absolute;
+                    top: -2rem;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .slide-body{
+                    @include dflex(column, center, center, 1rem);
+                    background-color: lighten($DarkGrayishBlue,36%);
+                    padding: 4rem 1rem;
+                    border-radius: 10px;
+                    min-height: clamp(300px,360px, 400px);
+                    .title{
+                        @include title(1.2rem, 700, $VeryDarkBlue);
+                    }
+                }
+            }
+        }
+    }
+    .object-back{
+        @include objectBack(438px, 210px, 22rem,lighten($BrightRed, 35%), -45deg);
+        position: absolute;
+        top: -2rem;
+        left: -15rem;
+        
+    }
+
+    
+    @media screen and (min-width:375px) {                
+        position: static;
+        .slider-container{
+            display: none;
+        }
+        .object-back{               
+            top: 42rem;
+            left: 14rem;            
+        }                      
+        
+    }
+    @media screen and (min-width:576px) {
+        position: relative;
+        .slider-container{
+            display: flex;
+        }                
+        .slider-container-mobile{
+            display: none;
+        }            
+        .object-back{
+            
+            top: -2rem;
+            left: -15rem;
+            
+        }
+                  
+    }
+    
+}

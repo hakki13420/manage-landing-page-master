@@ -1,0 +1,16 @@
+.links{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    column-gap: 8rem;
+    row-gap: 1rem;
+    a{
+        text-decoration: none;
+        color: $DarkGrayishBlue;
+        transition: color 0.4s ease;
+        &:hover{
+            color: $BrightRed;
+        }
+    }
+    
+}
